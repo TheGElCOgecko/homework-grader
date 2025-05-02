@@ -166,23 +166,23 @@ export default function App() {
               <tr>
                 <th>Student</th>
                 {homework.questions.map((_, i) => (
-                  <>
+                  <React.Fragment key={`table-header-${i}`}>
                     <th>Q{i + 1} Grade</th>
                     <th>Q{i + 1} Feedback</th>
-                  </>
+                  </React.Fragment>
                 ))}
                 <th>Total</th>
               </tr>
             </thead>
             <tbody>
               {submissions.map((s, idx) => (
-                <tr>
+                <tr key={`submission-${idx}`}>
                   <td>{s.studentName}</td>
                   {s.grades.map((grade, i) => (
-                    <>
+                    <React.Fragment key={`submission-${idx}-grade-${i}`}>
                       <td>{grade}</td>
                       <td>{s.feedbacks[i]}</td>
-                    </>
+                    </React.Fragment>
                   ))}
                   <td>{s.totalScore}</td>
                 </tr>

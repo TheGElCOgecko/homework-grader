@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('Should initially display the "Create homework" card', () => {
+  render(<App/>);
+  const element = screen.getByText("Create homework");
+  expect(element).toBeInTheDocument();
 });
